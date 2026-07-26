@@ -11476,6 +11476,7 @@ export async function main(ns) {
       doReset = true
     }
     let opp;
+    if (!opponent.length && !opponent2.length) throw new Error("No valid AI opponent detected while creating a new game.  Exiting."); 
     if (doReset) {
       try { ns.go.resetBoardState(opp = opponent2[Math.floor(Math.random() * opponent2.length)], 5) }
       catch { ns.go.resetBoardState(opp = opponent[Math.floor(Math.random() * opponent.length)], 5) }
