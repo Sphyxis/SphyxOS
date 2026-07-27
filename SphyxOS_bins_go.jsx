@@ -11524,7 +11524,7 @@ export async function main(ns) {
   }
 
   let turn = 0
-  let opponent = ns.go.getOpponent()
+  let currentOpponent = ns.go.getOpponent()
   // Pick up the board exactly where it is — reset only if it is already
   // finished. Then, if it is the opponent's move, let them play first.
   if (ns.go.getCurrentPlayer() === "None")
@@ -11730,7 +11730,7 @@ export async function main(ns) {
       boardState2,
       lastMove?.type == 'pass',
       seen,
-      opponent
+      currentOpponent
     );
 
     let moved = false;
